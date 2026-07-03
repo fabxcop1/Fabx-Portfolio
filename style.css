@@ -1151,3 +1151,13 @@ background:#00e5ff;
         0 0 30px cyan;
 
 }
+
+.email:hover{
+    background:#EA4335;
+    color:#fff;
+    transform:translateY(-8px) scale(1.08);
+    box-shadow:
+        0 0 15px #EA4335,
+        0 0 35px #EA4335,
+        0 0 60px #EA4335;
+}
