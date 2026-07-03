@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FABXCOP | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<link rel="icon" href="assets/profile.png">
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+</head>
+
+<body>
+
+<div id="loader">
+
+<h1 class="glitch">FABXCOP</h1>
+
+<p>Initializing Portfolio...</p>
+
+<div class="loading-bar">
+<div class="loading-progress"></div>
+</div>
+
+<button id="enterBtn">
+ENTER
+</button>
+
+</div>
+
+<audio id="bgmusic" loop>
+<source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicControl">
+
+<button id="playPause">
+⏸
+</button>
+
+<input type="range"
+id="volume"
+min="0"
+max="1"
+step="0.01"
+value="0.4">
+
+</div>
+
+<div id="tsparticles"></div>
+
+<header>
+
+<div class="logo">
+
+FABXCOP
+
+</div>
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#hire">Hire</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<img
+src="assets/profile.png"
+class="profile">
+
+<div class="heroText">
+
+<h1>
+
+Hi,
+
+I'm
+
+<span>FABXCOP</span>
+
+</h1>
+
+<h2>
+
+<span id="typing"></span>
+
+</h2>
+
+<p>
+
+Passionate Java Developer,
+Web Developer and Software Engineer.
+
+Always learning.
+
+Always building.
+
+</p>
+
+
+<div class="socials">
+
+<a href="https://discordapp.com/users/1223321456138780815" target="_blank" class="discord">
+    <i class="fa-brands fa-discord"></i>
+</a>
+
+<a href="https://steamcommunity.com/profiles/76561199198456480/" target="_blank" class="steam">
+    <i class="fa-brands fa-steam"></i>
+</a>
+
+<a href="https://www.instagram.com/abid_yt/" target="_blank" class="instagram">
+    <i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="mailto:Fabxcop@gmail.com" class="email">
+    <i class="fa-solid fa-envelope"></i>
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>
+
+ABOUT ME
+
+</h2>
+
+<p>
+
+Hello!
+
+I'm FABXCOP.
+
+I'm a passionate software developer focused on Java, desktop software, websites and modern technologies.
+
+I'm currently available for freelance work, internships and software engineering opportunities.
+
+</p>
+
+</section>
+
+<section id="skills">
+
+<h2>
+
+MY SKILLS
+
+</h2>
+
+<div class="skillsGrid">
+
+<div class="card">
+Java
+</div>
+
+<div class="card">
+HTML
+</div>
+
+<div class="card">
+CSS
+</div>
+
+<div class="card">
+JavaScript
+</div>
+
+<div class="card">
+Git
+</div>
+
+<div class="card">
+GitHub
+</div>
+
+<div class="card">
+Desktop Applications
+</div>
+
+<div class="card">
+Responsive Web Design
+</div>
+
+</div>
+
+</section>
+
+<section id="hire">
+
+<h2>
+
+AVAILABLE TO HIRE
+
+</h2>
+
+<div class="hireBox">
+
+<h3>
+
+Let's Build Something Amazing.
+
+</h3>
+
+<p>
+
+✔ Java Applications
+
+</p>
+
+<p>
+
+✔ Websites
+
+</p>
+
+<p>
+
+✔ Desktop Software
+
+</p>
+
+<p>
+
+✔ Frontend Development
+
+</p>
+
+<p>
+
+✔ Bug Fixes
+
+</p>
+
+<a href="hireme.html" target="_blank" class="hireBtn">
+    Hire Me
+</a>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>
+
+CONTACT
+
+</h2>
+
+<form action="https://formspree.io/f/mykqbrlg" target="_blank" method="POST">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required>
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required>
+
+    <textarea
+        name="message"
+        placeholder="Tell me about your project"
+        required></textarea>
+
+    <button  type="submit">
+        Hire Me
+    </button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 FABXCOP
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
