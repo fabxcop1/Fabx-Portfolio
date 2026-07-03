@@ -1,1163 +1,368 @@
-/* ===========================
-   FABXCOP Portfolio
-   Gaming Theme
-=========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-:root{
-
-    --bg:#05070d;
-    --bg2:#101826;
-
-    --blue:#00c8ff;
-    --purple:#8b5cf6;
-    --pink:#ff00ff;
-
-    --white:#ffffff;
-
-    --glass:rgba(255,255,255,.08);
-
-}
-
-body{
-
-    font-family:Poppins,sans-serif;
-
-    background:linear-gradient(135deg,var(--bg),var(--bg2));
-
-    color:white;
-
-    overflow-x:hidden;
-
-}
-
-/* Particle Canvas */
-
-#tsparticles{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-z-index:-5;
-
-}
-
-/* Loader */
-
-#loader{
-
-position:fixed;
-
-inset:0;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-flex-direction:column;
-
-background:#03050a;
-
-z-index:9999;
-
-}
-
-.glitch{
-
-font-family:Orbitron;
-
-font-size:70px;
-
-font-weight:900;
-
-color:white;
-
-text-shadow:
-
-0 0 15px cyan,
-
-0 0 40px blue,
-
-0 0 60px purple;
-
-animation:glitch 2s infinite;
-
-}
-
-@keyframes glitch{
-
-0%{
-
-transform:translateX(0);
-
-}
-
-25%{
-
-transform:translateX(2px);
-
-}
-
-50%{
-
-transform:translateX(-2px);
-
-}
-
-75%{
-
-transform:translateX(2px);
-
-}
-
-100%{
-
-transform:translateX(0);
-
-}
-
-}
-
-.loading-bar{
-
-margin-top:30px;
-
-width:350px;
-
-height:8px;
-
-border-radius:20px;
-
-background:#222;
-
-overflow:hidden;
-
-}
-
-.loading-progress{
-
-height:100%;
-
-width:0;
-
-background:linear-gradient(90deg,cyan,purple);
-
-animation:loading 3s forwards;
-
-}
-
-@keyframes loading{
-
-100%{
-
-width:100%;
-
-}
-
-}
-
-#enterBtn{
-
-margin-top:40px;
-
-padding:15px 50px;
-
-font-size:20px;
-
-font-family:Orbitron;
-
-background:transparent;
-
-border:2px solid cyan;
-
-color:white;
-
-cursor:pointer;
-
-transition:.4s;
-
-border-radius:12px;
-
-box-shadow:0 0 20px cyan;
-
-}
-
-#enterBtn:hover{
-
-background:cyan;
-
-color:black;
-
-transform:scale(1.05);
-
-}
-
-/* Header */
-
-header{
-
-position:fixed;
-
-top:0;
-
-width:100%;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:25px 80px;
-
-backdrop-filter:blur(15px);
-
-background:rgba(0,0,0,.25);
-
-z-index:999;
-
-}
-
-.logo{
-
-font-family:Orbitron;
-
-font-size:32px;
-
-font-weight:900;
-
-letter-spacing:4px;
-
-color:cyan;
-
-text-shadow:0 0 20px cyan;
-
-}
-
-nav{
-
-display:flex;
-
-gap:35px;
-
-}
-
-nav a{
-
-text-decoration:none;
-
-color:white;
-
-font-weight:600;
-
-transition:.35s;
-
-}
-
-nav a:hover{
-
-color:cyan;
-
-text-shadow:0 0 15px cyan;
-
-}
-
-/* Hero */
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:90px;
-
-padding:120px 80px;
-
-}
-
-.profile{
-
-width:330px;
-
-height:330px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-border:4px solid cyan;
-
-box-shadow:
-
-0 0 40px cyan,
-
-0 0 90px blue;
-
-animation:float 4s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-50%{
-
-transform:translateY(-15px);
-
-}
-
-}
-
-.heroText{
-
-max-width:650px;
-
-}
-
-.heroText h1{
-
-font-size:70px;
-
-font-family:Orbitron;
-
-line-height:1.1;
-
-}
-
-.heroText span{
-
-color:cyan;
-
-}
-
-.heroText h2{
-
-margin-top:20px;
-
-font-size:35px;
-
-color:#b4f3ff;
-
-}
-
-.heroText p{
-
-margin-top:30px;
-
-font-size:18px;
-
-line-height:1.8;
-
-color:#d8d8d8;
-
-}
-
-.buttons{
-
-margin-top:40px;
-
-display:flex;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.buttons a{
-
-padding:15px 35px;
-
-text-decoration:none;
-
-color:white;
-
-border:2px solid cyan;
-
-border-radius:12px;
-
-transition:.4s;
-
-}
-
-.buttons a:hover{
-
-background:cyan;
-
-color:black;
-
-box-shadow:0 0 30px cyan;
-
-transform:translateY(-5px);
-
-}
-
-/* ===========================
-   ABOUT SECTION
-=========================== */
-
-section{
-
-    padding:120px 10%;
+// ===============================
+// FABXCOP Portfolio
+// script.js
+// ===============================
 
-}
-
-section h2{
-
-    font-family:Orbitron;
-    font-size:48px;
-
-    text-align:center;
-
-    margin-bottom:60px;
-
-    color:var(--blue);
-
-    text-shadow:
-        0 0 10px var(--blue),
-        0 0 25px var(--blue);
-
-}
-
-#about p{
-
-    max-width:900px;
-
-    margin:auto;
-
-    text-align:center;
-
-    font-size:20px;
-
-    line-height:2;
-
-    color:#d6d6d6;
-
-}
-
-/* ===========================
-   SKILLS
-=========================== */
-
-.skillsGrid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:35px;
-
-}
-
-.card{
-
-    background:var(--glass);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    padding:40px;
-
-    border-radius:25px;
-
-    text-align:center;
-
-    font-size:22px;
-
-    font-weight:600;
-
-    transition:.4s;
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:-100%;
-
-    top:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.25),
-        transparent
-    );
-
-    transition:.7s;
-
-}
-
-.card:hover::before{
-
-    left:100%;
-
-}
-
-.card:hover{
-
-    transform:translateY(-12px);
-
-    border-color:var(--blue);
-
-    box-shadow:
-
-        0 0 20px var(--blue),
-
-        0 0 50px rgba(0,200,255,.5);
-
-}
-
-/* ===========================
-   HIRE SECTION
-=========================== */
-
-.hireBox{
-
-    max-width:850px;
-
-    margin:auto;
-
-    padding:60px;
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:30px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    text-align:center;
-
-}
-
-.hireBox h3{
-
-    font-size:36px;
-
-    margin-bottom:35px;
-
-    color:white;
-
-}
-
-.hireBox p{
-
-    margin:18px 0;
-
-    font-size:20px;
-
-    color:#dddddd;
-
-}
-
-.hireBtn{
-
-    display:inline-block;
-
-    margin-top:40px;
-
-    padding:18px 55px;
-
-    text-decoration:none;
-
-    color:white;
-
-    border:2px solid var(--blue);
-
-    border-radius:12px;
-
-    transition:.4s;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-}
-
-.hireBtn:hover{
-
-    background:var(--blue);
-
-    color:black;
-
-    box-shadow:
-
-        0 0 20px cyan,
-
-        0 0 50px cyan;
-
-}
-
-/* ===========================
-   CONTACT
-=========================== */
-
-form{
-
-    width:700px;
-
-    max-width:100%;
-
-    margin:auto;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:25px;
-
-}
+const loader = document.getElementById("loader");
+const enterBtn = document.getElementById("enterBtn");
 
-input,
-textarea{
+const music = document.getElementById("bgmusic");
+const playPause = document.getElementById("playPause");
+const volume = document.getElementById("volume");
 
-    width:100%;
+music.volume = 0.4;
 
-    padding:18px;
+// ----------------------
+// Enter Website
+// ----------------------
 
-    border:none;
+enterBtn.addEventListener("click", () => {
 
-    outline:none;
+    loader.style.opacity = "0";
 
-    border-radius:15px;
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 800);
 
-    background:rgba(255,255,255,.08);
+    music.play();
 
-    color:white;
+});
 
-    font-size:17px;
+// ----------------------
+// Play Pause
+// ----------------------
 
-    transition:.3s;
+playPause.addEventListener("click", () => {
 
-}
-
-textarea{
-
-    min-height:180px;
-
-    resize:none;
-
-}
-
-input:focus,
-textarea:focus{
-
-    border:1px solid var(--blue);
-
-    box-shadow:0 0 20px var(--blue);
-
-}
-
-form button{
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
-    background:linear-gradient(
-        90deg,
-        var(--blue),
-        var(--purple)
-    );
-
-    color:white;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    transition:.35s;
-
-}
-
-form button:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-
-        0 0 25px var(--blue),
-
-        0 0 40px var(--purple);
-
-}
-
-/* ===========================
-   MUSIC PLAYER
-=========================== */
-
-#musicControl{
-
-    position:fixed;
-
-    bottom:25px;
-
-    right:25px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:15px 20px;
-
-    border-radius:50px;
-
-    background:rgba(0,0,0,.45);
-
-    backdrop-filter:blur(15px);
-
-    z-index:999;
-
-}
-
-#playPause{
-
-    width:48px;
-
-    height:48px;
-
-    border:none;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-    background:var(--blue);
-
-    color:black;
-
-}
-
-#volume{
-
-    width:140px;
-
-    cursor:pointer;
+    if (music.paused) {
 
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-    padding:35px;
-
-    text-align:center;
-
-    color:#999;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-}
-
-/* ===========================
-   SCROLLBAR
-=========================== */
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
+        music.play();
 
-::-webkit-scrollbar-track{
+        playPause.innerHTML = "⏸";
 
-    background:#050505;
+    } else {
 
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:linear-gradient(
-
-        cyan,
-
-        purple
-
-    );
-
-    border-radius:50px;
+        music.pause();
 
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:1000px){
-
-header{
+        playPause.innerHTML = "▶";
 
-    padding:20px;
+    }
 
-    flex-direction:column;
+});
 
-    gap:20px;
+// ----------------------
+// Volume
+// ----------------------
 
-}
-
-.hero{
+volume.addEventListener("input", () => {
 
-    flex-direction:column;
+    music.volume = volume.value;
 
-    text-align:center;
-
-}
+});
 
-.heroText h1{
+// ----------------------
+// Typing Animation
+// ----------------------
 
-    font-size:50px;
+new Typed("#typing", {
 
-}
+    strings: [
 
-.profile{
+        "Software Engineer",
 
-    width:260px;
+        "Java Developer",
 
-    height:260px;
+        "Web Developer",
 
-}
+        "Frontend Developer",
 
-nav{
+        "Available For Hire"
 
-    flex-wrap:wrap;
+    ],
 
-    justify-content:center;
+    typeSpeed: 70,
 
-}
+    backSpeed: 40,
 
-.buttons{
+    backDelay: 1800,
 
-    justify-content:center;
+    loop: true
 
-}
+});
 
-section{
+// ----------------------
+// tsParticles
+// ----------------------
 
-    padding:90px 30px;
+tsParticles.load("tsparticles", {
 
-}
+    background: {
+        color: {
+            value: "transparent"
+        }
+    },
 
-}
+    fpsLimit: 60,
 
-/* ==========================
-   SOCIAL ICONS
-========================== */
+    particles: {
 
-.socials{
+        number: {
 
-    display:flex;
+            value: 80
 
-    gap:25px;
+        },
 
-    margin-top:45px;
+        color: {
 
-}
+            value: [
+                "#00e5ff",
+                "#8b5cf6",
+                "#ffffff"
+            ]
 
-.socials a{
+        },
 
-    width:75px;
+        links: {
 
-    height:75px;
+            enable: true,
 
-    border-radius:50%;
+            distance: 150,
 
-    display:flex;
+            color: "#00e5ff",
 
-    justify-content:center;
+            opacity: 0.3,
 
-    align-items:center;
+            width: 1
 
-    text-decoration:none;
+        },
 
-    color:white;
+        move: {
 
-    font-size:30px;
+            enable: true,
 
-    transition:.4s;
+            speed: 1.5,
 
-    background:rgba(255,255,255,.05);
+            outModes: {
 
-    backdrop-filter:blur(15px);
+                default: "bounce"
 
-    border:2px solid rgba(255,255,255,.12);
+            }
 
-}
+        },
 
-.socials a:hover{
+        opacity: {
 
-    transform:translateY(-10px) scale(1.15);
+            value: 0.5
 
-}
+        },
 
-/* Discord */
+        shape: {
 
-.discord:hover{
+            type: "circle"
 
-    background:#5865F2;
+        },
 
-    box-shadow:
+        size: {
 
-        0 0 20px #5865F2,
+            value: {
 
-        0 0 50px #5865F2,
+                min: 1,
 
-        0 0 90px #5865F2;
+                max: 4
 
-}
+            }
 
-/* Steam */
+        }
 
-.steam:hover{
+    },
 
-    background:#171a21;
+    interactivity: {
 
-    box-shadow:
+        events: {
 
-        0 0 20px #00adee,
+            onHover: {
 
-        0 0 50px #00adee,
+                enable: true,
 
-        0 0 90px #00adee;
+                mode: "grab"
 
-}
+            },
 
-/* Instagram */
+            onClick: {
 
-.instagram:hover{
+                enable: true,
 
-    background:linear-gradient(
-        45deg,
-        #F58529,
-        #DD2A7B,
-        #8134AF,
-        #515BD4
-    );
+                mode: "push"
 
-    box-shadow:
+            }
 
-        0 0 20px #DD2A7B,
+        },
 
-        0 0 50px #DD2A7B,
+        modes: {
 
-        0 0 90px #DD2A7B;
+            grab: {
 
-}
+                distance: 180,
 
-/* Email */
+                links: {
 
-.email:hover{
+                    opacity: 1
 
-    background:#00E5FF;
+                }
 
-    color:black;
+            },
 
-    box-shadow:
+            push: {
 
-        0 0 20px cyan,
+                quantity: 4
 
-        0 0 50px cyan,
+            }
 
-        0 0 90px cyan;
+        }
 
-}
+    }
 
-/* ===========================
-   RGB Gaming Cursor
-=========================== */
+});
 
-*{
-    cursor:none;
-}
+// ----------------------
+// Scroll Reveal
+// ----------------------
 
-#cursor{
+const observer = new IntersectionObserver((entries) => {
 
-    position:fixed;
+    entries.forEach(entry => {
 
-    width:18px;
-    height:18px;
+        if (entry.isIntersecting) {
 
-    border-radius:50%;
+            entry.target.style.opacity = "1";
 
-    pointer-events:none;
+            entry.target.style.transform = "translateY(0)";
 
-    z-index:999999;
+        }
 
-    background:#00e5ff;
+    });
 
-    transform:translate(-50%,-50%);
+}, {
 
-    animation:rgbCursor 5s linear infinite;
+    threshold: 0.2
 
-    box-shadow:
-        0 0 20px currentColor,
-        0 0 40px currentColor,
-        0 0 80px currentColor;
+});
 
-}
+document.querySelectorAll("section").forEach(section => {
 
-#cursorTrail{
+    section.style.opacity = "0";
 
-    position:fixed;
+    section.style.transform = "translateY(70px)";
 
-    width:45px;
-    height:45px;
+    section.style.transition = "1s";
 
-    border:2px solid white;
+    observer.observe(section);
 
-    border-radius:50%;
+});
 
-    pointer-events:none;
+// ----------------------
+// Header Shadow
+// ----------------------
 
-    transform:translate(-50%,-50%);
+window.addEventListener("scroll", () => {
 
-    transition:
-        width .25s,
-        height .25s;
+    const header = document.querySelector("header");
 
-    z-index:999998;
+    if (window.scrollY > 30) {
 
-}
+        header.style.background = "rgba(0,0,0,.65)";
 
-@keyframes rgbCursor{
+        header.style.boxShadow = "0 0 30px rgba(0,229,255,.25)";
 
-0%{
+    } else {
 
-color:#00e5ff;
-background:#00e5ff;
+        header.style.background = "rgba(0,0,0,.25)";
 
-}
+        header.style.boxShadow = "none";
 
-25%{
+    }
 
-color:#00ff73;
-background:#00ff73;
+});
 
-}
+// ----------------------
+// Mouse Glow
+// ----------------------
 
-50%{
+const glow = document.createElement("div");
 
-color:#ff00ff;
-background:#ff00ff;
+glow.style.position = "fixed";
+glow.style.width = "20px";
+glow.style.height = "20px";
+glow.style.borderRadius = "50%";
+glow.style.background = "rgba(0,229,255,.5)";
+glow.style.pointerEvents = "none";
+glow.style.filter = "blur(10px)";
+glow.style.zIndex = "99999";
 
-}
+document.body.appendChild(glow);
 
-75%{
+document.addEventListener("mousemove", e => {
 
-color:#ff8c00;
-background:#ff8c00;
+    glow.style.left = e.clientX - 10 + "px";
+    glow.style.top = e.clientY - 10 + "px";
+    
 
-}
+});
 
-100%{
+// ----------------------
+// Console Message
+// ----------------------
 
-color:#00e5ff;
-background:#00e5ff;
+console.log("%cFABXCOP Portfolio", "color:cyan;font-size:24px;font-weight:bold;");
+console.log("%cThanks for checking out my website!", "color:white;font-size:14px;");
 
-}
+const dot = document.querySelector(".cursor-dot");
+const ring = document.querySelector(".cursor-ring");
 
-}
+let mouseX = 0;
+let mouseY = 0;
 
-/* Hide normal cursor */
-*{
-    cursor:none;
-}
+let ringX = 0;
+let ringY = 0;
 
-/* Small center dot */
+document.addEventListener("mousemove", (e)=>{
 
-.cursor-dot{
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 
-    position:fixed;
+    dot.style.left = mouseX - 4 + "px";
+    dot.style.top = mouseY - 4 + "px";
 
-    width:8px;
-    height:8px;
+});
 
-    background:#00e5ff;
+function animateCursor(){
 
-    border-radius:50%;
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
 
-    pointer-events:none;
+    ring.style.left = ringX - 17 + "px";
+    ring.style.top = ringY - 17 + "px";
 
-    z-index:99999;
+    requestAnimationFrame(animateCursor);
 
 }
-
-/* Outer Ring */
-
-.cursor-ring{
-
-    position:fixed;
 
-    width:35px;
-    height:35px;
+animateCursor();
 
-    border:2px solid #00e5ff;
+document.querySelectorAll("a,button").forEach(el=>{
 
-    border-radius:50%;
+    el.addEventListener("mouseenter",()=>{
 
-    pointer-events:none;
+        ring.style.width="60px";
+        ring.style.height="60px";
 
-    transition:
-        width .2s,
-        height .2s,
-        border .2s;
+    });
 
-    z-index:99998;
+    el.addEventListener("mouseleave",()=>{
 
-    box-shadow:
+        ring.style.width="35px";
+        ring.style.height="35px";
 
-        0 0 15px cyan,
+    });
 
-        0 0 30px cyan;
-
-}
-
-.email:hover{
-    background:#EA4335;
-    color:#fff;
-    transform:translateY(-8px) scale(1.08);
-    box-shadow:
-        0 0 15px #EA4335,
-        0 0 35px #EA4335,
-        0 0 60px #EA4335;
-}
+});
