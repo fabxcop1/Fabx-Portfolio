@@ -1,0 +1,368 @@
+// ===============================
+// FABXCOP Portfolio
+// script.js
+// ===============================
+
+const loader = document.getElementById("loader");
+const enterBtn = document.getElementById("enterBtn");
+
+const music = document.getElementById("bgmusic");
+const playPause = document.getElementById("playPause");
+const volume = document.getElementById("volume");
+
+music.volume = 0.4;
+
+// ----------------------
+// Enter Website
+// ----------------------
+
+enterBtn.addEventListener("click", () => {
+
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 800);
+
+    music.play();
+
+});
+
+// ----------------------
+// Play Pause
+// ----------------------
+
+playPause.addEventListener("click", () => {
+
+    if (music.paused) {
+
+        music.play();
+
+        playPause.innerHTML = "⏸";
+
+    } else {
+
+        music.pause();
+
+        playPause.innerHTML = "▶";
+
+    }
+
+});
+
+// ----------------------
+// Volume
+// ----------------------
+
+volume.addEventListener("input", () => {
+
+    music.volume = volume.value;
+
+});
+
+// ----------------------
+// Typing Animation
+// ----------------------
+
+new Typed("#typing", {
+
+    strings: [
+
+        "Software Engineer",
+
+        "Java Developer",
+
+        "Web Developer",
+
+        "Frontend Developer",
+
+        "Available For Hire"
+
+    ],
+
+    typeSpeed: 70,
+
+    backSpeed: 40,
+
+    backDelay: 1800,
+
+    loop: true
+
+});
+
+// ----------------------
+// tsParticles
+// ----------------------
+
+tsParticles.load("tsparticles", {
+
+    background: {
+        color: {
+            value: "transparent"
+        }
+    },
+
+    fpsLimit: 60,
+
+    particles: {
+
+        number: {
+
+            value: 80
+
+        },
+
+        color: {
+
+            value: [
+                "#00e5ff",
+                "#8b5cf6",
+                "#ffffff"
+            ]
+
+        },
+
+        links: {
+
+            enable: true,
+
+            distance: 150,
+
+            color: "#00e5ff",
+
+            opacity: 0.3,
+
+            width: 1
+
+        },
+
+        move: {
+
+            enable: true,
+
+            speed: 1.5,
+
+            outModes: {
+
+                default: "bounce"
+
+            }
+
+        },
+
+        opacity: {
+
+            value: 0.5
+
+        },
+
+        shape: {
+
+            type: "circle"
+
+        },
+
+        size: {
+
+            value: {
+
+                min: 1,
+
+                max: 4
+
+            }
+
+        }
+
+    },
+
+    interactivity: {
+
+        events: {
+
+            onHover: {
+
+                enable: true,
+
+                mode: "grab"
+
+            },
+
+            onClick: {
+
+                enable: true,
+
+                mode: "push"
+
+            }
+
+        },
+
+        modes: {
+
+            grab: {
+
+                distance: 180,
+
+                links: {
+
+                    opacity: 1
+
+                }
+
+            },
+
+            push: {
+
+                quantity: 4
+
+            }
+
+        }
+
+    }
+
+});
+
+// ----------------------
+// Scroll Reveal
+// ----------------------
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.2
+
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+    section.style.opacity = "0";
+
+    section.style.transform = "translateY(70px)";
+
+    section.style.transition = "1s";
+
+    observer.observe(section);
+
+});
+
+// ----------------------
+// Header Shadow
+// ----------------------
+
+window.addEventListener("scroll", () => {
+
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 30) {
+
+        header.style.background = "rgba(0,0,0,.65)";
+
+        header.style.boxShadow = "0 0 30px rgba(0,229,255,.25)";
+
+    } else {
+
+        header.style.background = "rgba(0,0,0,.25)";
+
+        header.style.boxShadow = "none";
+
+    }
+
+});
+
+// ----------------------
+// Mouse Glow
+// ----------------------
+
+const glow = document.createElement("div");
+
+glow.style.position = "fixed";
+glow.style.width = "20px";
+glow.style.height = "20px";
+glow.style.borderRadius = "50%";
+glow.style.background = "rgba(0,229,255,.5)";
+glow.style.pointerEvents = "none";
+glow.style.filter = "blur(10px)";
+glow.style.zIndex = "99999";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove", e => {
+
+    glow.style.left = e.clientX - 10 + "px";
+    glow.style.top = e.clientY - 10 + "px";
+    
+
+});
+
+// ----------------------
+// Console Message
+// ----------------------
+
+console.log("%cFABXCOP Portfolio", "color:cyan;font-size:24px;font-weight:bold;");
+console.log("%cThanks for checking out my website!", "color:white;font-size:14px;");
+
+const dot = document.querySelector(".cursor-dot");
+const ring = document.querySelector(".cursor-ring");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let ringX = 0;
+let ringY = 0;
+
+document.addEventListener("mousemove", (e)=>{
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    dot.style.left = mouseX - 4 + "px";
+    dot.style.top = mouseY - 4 + "px";
+
+});
+
+function animateCursor(){
+
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+
+    ring.style.left = ringX - 17 + "px";
+    ring.style.top = ringY - 17 + "px";
+
+    requestAnimationFrame(animateCursor);
+
+}
+
+animateCursor();
+
+document.querySelectorAll("a,button").forEach(el=>{
+
+    el.addEventListener("mouseenter",()=>{
+
+        ring.style.width="60px";
+        ring.style.height="60px";
+
+    });
+
+    el.addEventListener("mouseleave",()=>{
+
+        ring.style.width="35px";
+        ring.style.height="35px";
+
+    });
+
+});
